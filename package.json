@@ -23,7 +23,7 @@
     "package manager",
     "package.json"
   ],
-  "homepage": "https://docs.npmjs.com/",
+  "homepage": "https://github.com/Senshi124/COMP-2156.git",
   "author": "GitHub Inc.",
   "repository": {
     "type": "git",
@@ -226,6 +226,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
 
     "dependencies": "node scripts/bundle-and-gitignore-deps.js && node scripts/dependency-graph.js",
     "dumpconf": "env | grep npm | sort | uniq",
