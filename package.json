@@ -51,6 +51,15 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^6.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+    
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^8.0.0",
     "@npmcli/config": "^9.0.0",
@@ -213,6 +222,11 @@
     "tap": "^16.3.9"
   },
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+
     "dependencies": "node scripts/bundle-and-gitignore-deps.js && node scripts/dependency-graph.js",
     "dumpconf": "env | grep npm | sort | uniq",
     "licenses": "npx licensee --production --errors-only",
@@ -261,4 +275,11 @@
   "engines": {
     "node": "^18.17.0 || >=20.5.0"
   }
+
+ "eslintConfig": {
+   "extends": ["react-app", "react-app/jest"]
+ },
+ "browserslist": {
+   "production": [">0.2%", "not dead", "not op_mini all"]
+ }
 }
