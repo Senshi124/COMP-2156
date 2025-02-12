@@ -1,11 +1,28 @@
 language: node_js
 node_js:
   - "stable"
-dist: focal
+
+branches:
+  only:
+    - master  # Deploy only when pushing to master/main
+
+cache:
+  directories:
+    - node_modules  # Cache dependencies for faster builds
+
+install:
+  - npm install
+  - npm install -g yarn  # Install Yarn globally
+
+script:
+  - yarn build  # Build the project
+  - mv build/index.html build/404.html  # Fix GitHub Pages routing
+
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
+  github_token: $GITHUB_TOKEN  # Use the secret GitHub token
+  local_dir: build  # Deploy the build directory
   on:
-    branch: main
+    branch: master  # Deploy only from the master branch
+
